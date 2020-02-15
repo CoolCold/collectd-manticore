@@ -30,9 +30,6 @@ command_callpq   '''
 instance=''
 
 def printvals(values, instance='default'):
-#write(1, "PUTVAL \"eva03.academic.ru/lvmcache-inktomia-pv--virtuals/df_complex-dirty\" interval=10.0 N:2031616\nPUTVAL \"eva03.academic.ru/lvmcache-inktomia-pv--virtuals/df_complex-metadata_used\" interval=10.0 N:9998336\nPUTVAL \"eva03.academic.ru/lvmcache-inktomia-pv--virtuals/df_complex-metadata_free\" interval=10.0 N:23556096\nPUTVAL \"eva03.academic.ru/lvmcache-inktomia-pv--virtuals/df_complex-cache_used\" interval=10.0 N:40112226304\nPUTVAL \"eva03.academic.ru/lvmcache-inktomia-pv--virtuals/df_complex-cache_free\" interval=1"..., 2223) = 2223
-#write(1, "PUTVAL \"eva03.academic.ru/lvmcache-inktomia-pv--virtuals/df_complex-dirty\" interval=10.0 N:1507328\nPUTVAL \"eva03.academic.ru/lvmcache-inktomia-pv--virtuals/df_complex-metadata_used\" interval=10.0 N:9998336\nPUTVAL \"eva03.academic.ru/lvmcache-inktomia-pv--virtuals/df_complex-metadata_free\" interval=10.0 N:23556096\nPUTVAL \"eva03.academic.ru/lvmcache-inktomia-pv--virtuals/df_complex-cache_used\" interval=10.0 N:40112226304\nPUTVAL \"eva03.academic.ru/lvmcache-inktomia-pv--virtuals/df_complex-cache_free\" interval=1"..., 2223) = 2223
-
     for counter in values:
         print('PUTVAL "%s/manticore-%s/%s-%s" interval=%s N:%s' % (hostname, instance, types[counter],counter, interval, values[counter]))
         sys.stdout.flush()
