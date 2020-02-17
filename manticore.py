@@ -9,7 +9,7 @@ import pymysql.cursors
 hostname = os.environ['COLLECTD_HOSTNAME'] if 'COLLECTD_HOSTNAME' in os.environ else socket.getfqdn()
 interval = float(os.environ['COLLECTD_INTERVAL']) if 'COLLECTD_INTERVAL' in os.environ else 1
 
-settings = {'host': '0', 'port': 9306}
+settings = {'host': '0', 'port': 9306, 'connect_timeout': 3}
 stats = {'fields': ['connections','queries','qcache_hits', 'command_search']}
 types = { 'connections': 'connections' ,'queries': 'operations','qcache_hits': 'cache_operation', 'command_search': 'operations' }
 '''
@@ -40,7 +40,7 @@ def main():
         print("please specify Instance as first argv param")
         sys.exit(2)
     instance = sys.argv[1]
-    connection = pymysql.connect(host=settings['host'], port=settings['port'],cursorclass=pymysql.cursors.DictCursor) #how to set timeout?!
+    connection = pymysql.connect(host=settings['host'], port=settings['port'],cursorclass=pymysql.cursors.DictCursor,connect_timeout=settings['connect_timeout']) #how to set timeout?!
     while True:
         try:
             with connection.cursor() as cursor:
