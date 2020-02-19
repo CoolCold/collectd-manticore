@@ -22,3 +22,10 @@ root@delta7:~# cat /etc/collectd/conf.d/exec-config.conf
 
 </Plugin>
 ```
+
+# installation
+## dependenices
+On Debian/Ubuntu you should be okay after install mysql lib for python. I've used python3, but you may try on python 2.x as well, may be will work.
+```
+apt-get install python3-pymysql
+```
