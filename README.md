@@ -4,6 +4,8 @@ collectd Exec type plugin to gather stats from Manticore ( https://manticoresear
 # sample
 ## grafana graph
 
+![Sample graph with requests and cache hits](docs/img/collectd-manticore-grafana-sample.png)
+
 
 # collectd sample config
 Refer to [official docs](https://collectd.org/wiki/index.php/Plugin:Exec), but in general it should work with quite simple config like that:
